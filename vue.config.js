@@ -3,7 +3,7 @@ const publicPath = process.env.VUE_APP_PUBLIC_PATH;
 
 module.exports = {
   // 项目部署的基础路径
-  publicPath: `/${publicPath}/`,
+  publicPath: `/app/`, //`/${publicPath}/`,
 
   // 将构建好的文件输出到哪里
   outputDir: publicPath,
@@ -52,7 +52,7 @@ module.exports = {
     // sass-loader 时，使用 `{ sass: { ... } }`。
     loaderOptions: {
       sass: {
-        data: `@import "@/styles/variables.scss";`
+        prependData: `@import "~@/styles/variables.scss";` //新版本变了：https://segmentfault.com/q/1010000020343645/a-1020000020352930
       }
     },
 
@@ -69,18 +69,18 @@ module.exports = {
     https: false,
     hotOnly: false,
     // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
-    proxy: {
-      "/mes/": {
-        target: proxyConfig.hostproxy.mes,
-        changeOrigin: true,
-        pathRewrite: {}
-      },
-      "/staticfile/": {
-        target: "http://10.8.XXX.XXX/",
-        changeOrigin: true,
-        pathRewrite: {}
-      }
-    }, // string | Object
+    // proxy: {
+    //   "/mes/": {
+    //     target: proxyConfig.hostproxy.mes,
+    //     changeOrigin: true,
+    //     pathRewrite: {}
+    //   },
+    //   "/staticfile/": {
+    //     target: "http://10.8.XXX.XXX/",
+    //     changeOrigin: true,
+    //     pathRewrite: {}
+    //   }
+    // }, // string | Object
     before: () => {}
   },
   configureWebpack: config => {
