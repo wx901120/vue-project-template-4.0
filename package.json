@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:sit": "vue-cli-service build --mode sit", //注意，这里 “--mode 名字“ 要和根目录下面.env.xxx文件名“.env.名字”名字保持一致
+    "build:sit": "vue-cli-service build --mode sit",
     "build:uat": "vue-cli-service build --mode uat",
     "build:uat56": "vue-cli-service build --mode uat56"
   },
